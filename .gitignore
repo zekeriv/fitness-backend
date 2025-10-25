@@ -1,2 +1,21 @@
-.venv
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Django
+db.sqlite3
+*.log
+
+# Environment
 .env
+venv/
+.venv/
+
+# PyCharm / JetBrains
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
