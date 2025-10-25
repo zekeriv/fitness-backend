@@ -1,7 +1,7 @@
 # backend/settings.py
-
 import os
 from decouple import config, Csv
+from pathlib import Path
 
 # ------------------------------
 # BASE DIRECTORY (as string)
