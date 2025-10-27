@@ -12,4 +12,7 @@ urlpatterns = [
     # JWT provided endpoints for login & refresh
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # login
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+    # daily activities endpoints
+    path('api/activities/', include('activities.urls')),
 ]
