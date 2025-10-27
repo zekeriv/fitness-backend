@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     # Your apps
     'accounts',
+    'activities',
 ]
 
 # ------------------------------
