@@ -13,3 +13,10 @@ class DailyActivityListCreateView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         # Assign logged-in user automatically
         serializer.save(user=self.request.user)
+
+class DailyActivityDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = DailyActivitySerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return DailyActivity.objects.filter(user=self.request.user)
