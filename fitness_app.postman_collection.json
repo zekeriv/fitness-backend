@@ -1,0 +1,682 @@
+{
+	"info": {
+		"_postman_id": "8b120293-e6ac-47e3-8d3d-50cf6fd91aba",
+		"name": "fitness_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46271086",
+		"_collection_link": "https://zeke-1969537.postman.co/workspace/zeke's-Workspace~ca1a0b0e-bbf6-4939-835a-4656da0f333c/collection/46271086-8b120293-e6ac-47e3-8d3d-50cf6fd91aba?action=share&source=collection_link&creator=46271086"
+	},
+	"item": [
+		{
+			"name": "localhost",
+			"item": [
+				{
+					"name": "register local",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"jason\",\r\n  \"email\": \"jason@example.com\",\r\n  \"first_name\": \"Jason\",\r\n  \"last_name\": \"Kidd\",\r\n  \"password\": \"Password123!\",\r\n  \"password2\": \"Password123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/auth/register/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login local",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"kobe\",\r\n  \"password\": \"Password123!\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/token/",
+							"protocol": "http",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch-user-details local",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNTY3MjkyLCJpYXQiOjE3NjE1NjY5OTIsImp0aSI6ImJjZDVjZDE1NzIxYTQxM2I5MTEwY2M5MDI2YzhmNzg0IiwidXNlcl9pZCI6IjYifQ.ZUqaC2D3u4fq3Aqedr6tOMYppDrrHr6HdCxNwRGntns",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"kobe\",\r\n  \"email\": \"kobe@example.com\",\r\n  \"first_name\": \"Kobe\",\r\n  \"last_name\": \"Bryant\",\r\n  \"password\": \"Password123!\",\r\n  \"password2\": \"Password123!\"\r\n}"
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/auth/me/",
+							"protocol": "http",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"me",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh-access-token local",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2MTY1MzM5MiwiaWF0IjoxNzYxNTY2OTkyLCJqdGkiOiI3NzVhYTY3Njk5MGY0MzA1OGM2MjQxNGQ0NGYwZTk0ZCIsInVzZXJfaWQiOiI2In0.Uek0wp2_Q7cBpJh_2fFH40Tz-R52MsogmD98BEdDb80\" \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxMzkwNTAzLCJpYXQiOjE3NjEzOTAyMDUsImp0aSI6IjY2Y2IxNDJmOGZkYjQwMWU5MDk3NmFiYzAxZmRjMzExIiwidXNlcl9pZCI6IjIifQ.ecpnoiadHydp_LTj15hULL11SfW-0Y9j_YkJR12Kie0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2MTQ3NjQ5NiwiaWF0IjoxNzYxMzkwMDk2LCJqdGkiOiI1NDQzODljMzdjYzE0MjlkODEyNmJjOTc5YWI2N2ZhNCIsInVzZXJfaWQiOiIyIn0.vyHp4kYEz7wabmDC7X9EG-B95XsnrbgI2o8nqVLxb_c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/auth/logout/",
+							"protocol": "http",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new activity local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjQyMTE4LCJpYXQiOjE3NjE2NDE4MjAsImp0aSI6ImUwNzZmOTU1MTJiYTQyNGViOGRiYzhkMWM1NDdhMjJlIiwidXNlcl9pZCI6IjYifQ.6WtJznHMFpgU1QLfRowbD6wNdZEZwNY_hzBGTfGpC88",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Swimming\",\r\n    \"description\": \"45 minutes\",\r\n    \"status\": \"planned\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/activities/",
+							"protocol": "http",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update status of activity local",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjQyMjY0LCJpYXQiOjE3NjE2NDE5NjgsImp0aSI6ImUzZmRhZWMzMmVlZjRjZmI5MmFjNmZlZjg0MGQyZTk5IiwidXNlcl9pZCI6IjYifQ.T3usru1LxmQRvH61C_MPkmAy4aMnoi7A8Vk1ewzroOw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"completed\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/activities/1/",
+							"protocol": "http",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activities",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list all activities local",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjQyMjY0LCJpYXQiOjE3NjE2NDE5NjgsImp0aSI6ImUzZmRhZWMzMmVlZjRjZmI5MmFjNmZlZjg0MGQyZTk5IiwidXNlcl9pZCI6IjYifQ.T3usru1LxmQRvH61C_MPkmAy4aMnoi7A8Vk1ewzroOw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/activities/",
+							"protocol": "http",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete activity local",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjQzOTkyLCJpYXQiOjE3NjE2NDM2OTQsImp0aSI6ImRhN2RkMDA1MDdhYzRjM2M4M2ZhZDc3M2UyZjE1ZTk1IiwidXNlcl9pZCI6IjYifQ.9rVFbwen0T1h3th-Ip8HFoMXwBG2OaDVbz5iNFbBkI0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/activities/3/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"activities",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get activity local",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjQ0MjU3LCJpYXQiOjE3NjE2NDM5NTksImp0aSI6IjM5YWE0MWZhYmExZTQ4ZjdiYzBiY2U4OTNmZjY3NTUyIiwidXNlcl9pZCI6IjYifQ.Ejsf5r-OzshDfzIZFHQ4kXhldHQDHGzsa0sxJnh4ydY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/activities/4/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"activities",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vercel url",
+			"item": [
+				{
+					"name": "register vercel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"kobe\",\r\n  \"email\": \"kobe@example.com\",\r\n  \"first_name\": \"Kobe\",\r\n  \"last_name\": \"Bryant\",\r\n  \"password\": \"Password123!\",\r\n  \"password2\": \"Password123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/auth/register/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login-vercel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"jason\",\r\n  \"password\": \"Password123!\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/token/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch user details vercel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjQ0NjQ0LCJpYXQiOjE3NjE2NDQzNDQsImp0aSI6Ijg5ODUxZjg4YTBiOTQzM2M5Mjc0ZjM2NWQ2MDE5Y2UyIiwidXNlcl9pZCI6IjcifQ.zVCMFNj91jQNzckgqXuZHn7XubwD5AoWUMAE2WlLTLE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"jason\",\r\n  \"email\": \"jason@example.com\",\r\n  \"first_name\": \"Jason\",\r\n  \"last_name\": \"Kidd\",\r\n  \"password\": \"Password123!\",\r\n  \"password2\": \"Password123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/auth/me/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"auth",
+								"me",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh-access-token vercel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2MTczMDc0NCwiaWF0IjoxNzYxNjQ0MzQ0LCJqdGkiOiJmMzY0NzM2NzExMjE0MWI3OTU5YWJiNTYzMDQ2MGUzMiIsInVzZXJfaWQiOiI3In0.55vnSzuvfnDMtoQMx4wcZ_QCBviONRyxlnLX33IOjRc\" \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/token/refresh/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout vercel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjQ0ODI1LCJpYXQiOjE3NjE2NDQ1MjUsImp0aSI6IjUwNzRlMjU3Mjk3NjQ3NWNiNGQ2ZjA0N2JkNGNjYjQxIiwidXNlcl9pZCI6IjcifQ.UctjxWYX-yb1jailqgOQaPtNy-I0ZnXArdHz3L47Jd4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2MTczMDc0NCwiaWF0IjoxNzYxNjQ0MzQ0LCJqdGkiOiJmMzY0NzM2NzExMjE0MWI3OTU5YWJiNTYzMDQ2MGUzMiIsInVzZXJfaWQiOiI3In0.55vnSzuvfnDMtoQMx4wcZ_QCBviONRyxlnLX33IOjRc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/auth/logout/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new activity vercel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjQyODg4LCJpYXQiOjE3NjE2NDI1ODgsImp0aSI6IjhjZTg3NDI2YmNmZDRiMGM5ODljYTY3ZGFkMTUxYjdhIiwidXNlcl9pZCI6IjYifQ.b3VA-0An-1FbIyL9c7XbxXXzFKgJea4xcsFyT72cku0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"eat veggies\",\r\n    \"description\": \"50g brocolli\",\r\n    \"status\": \"planned\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/activities/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"activities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update status of activity vercel",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjQzNjM3LCJpYXQiOjE3NjE2NDMzMzcsImp0aSI6ImM1MWQ5YjAwYmU4NjQ1M2FhZjIwMzMwMTI4NWQwZjU3IiwidXNlcl9pZCI6IjYifQ.-SYsTrRDCDrj3t3DbeJYAc6BY-inJEKrxQ2f8ePbIZM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"completed\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/activities/1/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"activities",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list all activities vercel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjAwMjgzLCJpYXQiOjE3NjE1OTk5ODMsImp0aSI6ImQ4OWU5MTVmMDBkYjQ2MzY4MThlNzUxZTNhMjRhNmI5IiwidXNlcl9pZCI6IjYifQ.FxJvsn8-HI6noxO9D-Xnm0tN7SFQ-I0P2DTk7U58V_o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/activities/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"activities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete activity vercel",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjQzNjM3LCJpYXQiOjE3NjE2NDMzMzcsImp0aSI6ImM1MWQ5YjAwYmU4NjQ1M2FhZjIwMzMwMTI4NWQwZjU3IiwidXNlcl9pZCI6IjYifQ.-SYsTrRDCDrj3t3DbeJYAc6BY-inJEKrxQ2f8ePbIZM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/activities/2/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"activities",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get activity vercel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxNjQzODU4LCJpYXQiOjE3NjE2NDM1NTksImp0aSI6IjQzOGQwNmNiZDA5YTQ1MjI4ZmVjNjc0MWU0ZjYyODY3IiwidXNlcl9pZCI6IjYifQ.u9TLOlKGzCidSCf-XA-TeNCVKG5ZOvqKGIxIyoL90bY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app/api/activities/3/",
+							"host": [
+								"https://fitness-backend-git-main-zekes-projects-ef73a687.vercel.app"
+							],
+							"path": [
+								"api",
+								"activities",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": "",
+			"type": "default"
+		}
+	]
+}
